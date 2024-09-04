@@ -10,7 +10,6 @@ namespace biblioteca
     {
         public override void RealizarPrestamo()
         {
-            // Lógica específica para libros electrónicos
             base.RealizarPrestamo();
             Console.WriteLine("Este es un préstamo de un libro electrónico.");
         }

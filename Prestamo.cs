@@ -15,7 +15,6 @@ namespace biblioteca
 
         public virtual void RealizarPrestamo()
         {
-            // Lógica genérica de préstamo
             Console.WriteLine($"{Miembro.Nombre} ha tomado prestado {LibroPrestado.Titulo}.");
         }
     }
