@@ -15,21 +15,22 @@ namespace biblioteca
 
         public virtual void RealizarPrestamo()
         {
-
-
+            // Validaciones previas
             if (LibroPrestado == null)
-                throw new ArgumentNullException("No ha seleccionado un libro para realizar el prestamo.");
-            if (Miembro == null)
-                throw new ArgumentNullException("Seleccionar un miembro");
-            if (LibroPrestado.Estaprestado == null)
-                throw new InvalidOperationException("Le informamos que el libro seleccionado ya está prestado");
+                throw new ArgumentNullException("Por favor, seleccionar un libro para realizar el préstamo.");
 
-            LibroPrestado.Estaprestado = true;
+            if (Miembro == null)
+                throw new ArgumentNullException("Por favor, seleccionar un miembro para realizar el préstamo.");
+
+            if (LibroPrestado.EstaPrestado)
+                throw new InvalidOperationException("El libro seleccionado ya está prestado. No se puede realizar un nuevo préstamo.");
+
+           
+            LibroPrestado.EstaPrestado = true; 
             FechaPrestamo = DateTime.Now;
             FechaDevolucion = FechaPrestamo.AddDays(15);
 
 
-            // Lógica genérica de préstamo
             Console.WriteLine($"{Miembro.Nombre} ha tomado prestado {LibroPrestado.Titulo}.");
         }
     }

@@ -51,7 +51,7 @@ namespace biblioteca
         public void AgregarPrestamo(Prestamo prestamo)
         {
             if (prestamo == null)
-                throw new ArgumentNullException(nameof(prestamo), "El préstamo no puede ser nulo.");
+                throw new ArgumentNullException(nameof(prestamo), "Le informo que no se puede realizar el prestamo del libro.");
 
             HistorialPrestamos.Add(prestamo);
         }
