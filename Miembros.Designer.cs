@@ -1,6 +1,6 @@
 ﻿namespace biblioteca
 {
-    partial class Miebros
+    partial class Miembros
     {
         /// <summary>
         /// Required designer variable.
@@ -105,7 +105,7 @@
             flowLayoutPanel1.Size = new Size(489, 240);
             flowLayoutPanel1.TabIndex = 7;
             // 
-            // Miebros
+            // Miembros
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -118,8 +118,8 @@
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(textBoxNombreMiembro);
-            Name = "Miebros";
-            Text = "Miebros";
+            Name = "Miembros";
+            Text = "Miembros";
             Load += Miebros_Load;
             ResumeLayout(false);
             PerformLayout();
