@@ -25,11 +25,12 @@ namespace biblioteca
             if (LibroPrestado.EstaPrestado)
                 throw new InvalidOperationException("El libro seleccionado ya está prestado. No se puede realizar un nuevo préstamo.");
 
-           
-            LibroPrestado.EstaPrestado = true; 
+
+            LibroPrestado.EstaPrestado = true;
             FechaPrestamo = DateTime.Now;
             FechaDevolucion = FechaPrestamo.AddDays(15);
 
 
+        }
     }
 }
