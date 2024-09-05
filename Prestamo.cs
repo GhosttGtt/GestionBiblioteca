@@ -31,7 +31,5 @@ namespace biblioteca
             FechaDevolucion = FechaPrestamo.AddDays(15);
 
 
-            Console.WriteLine($"{Miembro.Nombre} ha tomado prestado {LibroPrestado.Titulo}.");
-        }
     }
 }

@@ -10,6 +10,7 @@ namespace biblioteca
     {
         public override void RealizarPrestamo()
         {
+
             try
             {
                 if (LibroPrestado == null)
@@ -23,6 +24,7 @@ namespace biblioteca
                 Console.WriteLine($"Error al realizar el préstamo del libro físico: {ex.Message}");
                 throw;
             }
+
         }
     }
 }

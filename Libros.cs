@@ -1,8 +1,8 @@
 namespace biblioteca
 {
-    public partial class Form1 : Form
+    public partial class Libros : Form
     {
-        public Form1()
+        public Libros()
         {
             InitializeComponent();
         }
