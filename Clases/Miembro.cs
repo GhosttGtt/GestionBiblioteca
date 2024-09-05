@@ -32,7 +32,7 @@ namespace biblioteca.Clases
             set
             {
                 if (value <= 0)
-                    throw new ArgumentOutOfRangeException(nameof(NumeroMiembro), "El número de miembro debe ser un valor positivo.");
+                    throw new ArgumentOutOfRangeException(nameof(NumeroMiembro), "Recuerde que el número de miembro debe ser un valor positivo.");
                 numeroMiembro = value;
             }
         }
