@@ -10,7 +10,7 @@ namespace biblioteca.Clases
     {
         public string ubicacionBiblioteca {  get; set; }
 
-        public LibroFisico(string titulo, string autor, int anio, string ubicacionBiblioteca) : base(titulo, autor, anio)
+        public LibroFisico(string titulo, string autor, int anio, Boolean EstaPrestado, string ubicacionBiblioteca) : base(titulo, autor, anio, EstaPrestado)
         {
             this.ubicacionBiblioteca = ubicacionBiblioteca;
         }

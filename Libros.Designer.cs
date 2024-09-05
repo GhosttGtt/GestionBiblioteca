@@ -47,6 +47,7 @@
             textBoxTituloLibro.Name = "textBoxTituloLibro";
             textBoxTituloLibro.Size = new Size(294, 23);
             textBoxTituloLibro.TabIndex = 0;
+            textBoxTituloLibro.TextChanged += textBoxTituloLibro_TextChanged;
             // 
             // textBoxAñoLibro
             // 

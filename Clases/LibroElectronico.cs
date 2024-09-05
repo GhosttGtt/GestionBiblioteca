@@ -11,7 +11,7 @@ namespace biblioteca.Clases
         public int tamanoArchivo {  get; set; }
         public string formato { get; set; }
 
-        public LibroElectronico(string titulo, string autor, int anio, int tamanoArchivo, string formato) : base (titulo, autor, anio)
+        public LibroElectronico(string titulo, string autor, int anio, Boolean EstaPrestado, int tamanoArchivo, string formato) : base (titulo, autor, anio, EstaPrestado)
         {
             this.tamanoArchivo = tamanoArchivo;
             this.formato = formato;
