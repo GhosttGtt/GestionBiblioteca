@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 
-namespace biblioteca
+namespace biblioteca.Clases
 {
     public class Miembro
     {
@@ -40,7 +40,7 @@ namespace biblioteca
         public List<Prestamo> HistorialPrestamos
         {
             get { return historialPrestamos; }
-            private set { historialPrestamos = value; }  
+            private set { historialPrestamos = value; }
         }
 
         public Miembro()

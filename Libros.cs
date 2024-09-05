@@ -6,5 +6,10 @@ namespace biblioteca
         {
             InitializeComponent();
         }
+
+        private void textBoxTituloLibro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
