@@ -15,7 +15,6 @@ namespace biblioteca.Clases
 
         public virtual void RealizarPrestamo()
         {
-            // Validaciones previas
             if (LibroPrestado == null)
                 throw new ArgumentNullException("Por favor, seleccionar un libro para realizar el préstamo.");
 
@@ -23,7 +22,7 @@ namespace biblioteca.Clases
                 throw new ArgumentNullException("Por favor, seleccionar un miembro para realizar el préstamo.");
 
             if (LibroPrestado.EstaPrestado)
-                throw new InvalidOperationException("El libro seleccionado ya está prestado. No se puede realizar un nuevo préstamo.");
+                throw new InvalidOperationException("El libro seleccionado ya está prestado. Por favor selecciona otro.");
 
 
             LibroPrestado.EstaPrestado = true;
