@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Biblioteca.assets;
+using Biblioteca.Clases;
 
 namespace Biblioteca
 {
@@ -23,11 +23,11 @@ namespace Biblioteca
         private void CargarDatos()
         {
             // Cargar libros y miembros en los ComboBox
-            cmbLibros.DataSource = Biblioteca.Libros;
+            cmbLibros.DataSource = Clases.Biblioteca.Libros;
             cmbLibros.DisplayMember = "Titulo"; // Mostrar el título en el ComboBox
             cmbLibros.ValueMember = "Titulo"; // Usar el título como valor seleccionado (esto debe ser ajustado para seleccionar el objeto)
 
-            cmbMiembros.DataSource = Biblioteca.Miembros;
+            cmbMiembros.DataSource = Clases.Biblioteca.Miembros;
             cmbMiembros.DisplayMember = "Nombre"; // Mostrar el nombre en el ComboBox
             cmbMiembros.ValueMember = "NumeroMiembro"; // Usar el número de miembro como valor seleccionado (esto debe ser ajustado para seleccionar el objeto)
 
@@ -37,7 +37,7 @@ namespace Biblioteca
         private void CargarHistorialPrestamos()
         {
 
-            var prestamos = Biblioteca.ObtenerHistorialPrestamos();
+            var prestamos = Clases.Biblioteca.ObtenerHistorialPrestamos();
             dgvHistorialPrestamos.DataSource = prestamos;
         }
 
@@ -45,14 +45,14 @@ namespace Biblioteca
 
         private void CargarLibros()
         {
-            foreach (var libro in Biblioteca.Libros)
+            foreach (var libro in Clases.Biblioteca.Libros)
             {
                 cmbLibros.Items.Add(libro.Titulo);
             }
         }
         private void CargarMiembros()
         {
-            foreach (var miembro in Biblioteca.Miembros)
+            foreach (var miembro in Clases.Biblioteca.Miembros)
             {
                 cmbMiembros.Items.Add(miembro.Nombre);
             }
@@ -78,7 +78,7 @@ namespace Biblioteca
                     return;
                 }
                 var nuevoPrestamo = new Prestamo(libroSeleccionado, miembroSeleccionado, dtpFechaPrestamo.Value);
-                Biblioteca.Prestamos.Add(nuevoPrestamo);
+                Clases.Biblioteca.Prestamos.Add(nuevoPrestamo);
 
                 libroSeleccionado.EstaPrestado = true;
                 miembroSeleccionado.HistorialPrestamos.Add(nuevoPrestamo);

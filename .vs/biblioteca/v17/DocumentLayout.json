@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\alexg\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\Form\\biblioteca\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3B68B8D2-E5D3-4045-922A-CA59AF047B4A}|biblioteca.csproj|c:\\users\\alexg\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\form\\biblioteca\\clases\\libro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B68B8D2-E5D3-4045-922A-CA59AF047B4A}|biblioteca.csproj|solutionrelative:clases\\libro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{43393F18-7106-4371-8C75-0E1BA95DE04C}|Biblioteca.csproj|c:\\users\\alexg\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\form\\biblioteca\\clases\\biblioteca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43393F18-7106-4371-8C75-0E1BA95DE04C}|Biblioteca.csproj|solutionrelative:clases\\biblioteca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43393F18-7106-4371-8C75-0E1BA95DE04C}|Biblioteca.csproj|c:\\users\\alexg\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\form\\biblioteca\\biblioteca.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{43393F18-7106-4371-8C75-0E1BA95DE04C}|Biblioteca.csproj|solutionrelative:biblioteca.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +27,26 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Libro.cs",
-              "DocumentMoniker": "C:\\Users\\alexg\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\Form\\biblioteca\\Clases\\Libro.cs",
-              "RelativeDocumentMoniker": "Clases\\Libro.cs",
-              "ToolTip": "C:\\Users\\alexg\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\Form\\biblioteca\\Clases\\Libro.cs",
-              "RelativeToolTip": "Clases\\Libro.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAqwBkAAAAAAAAAAAAAAA==",
+              "Title": "Biblioteca.cs",
+              "DocumentMoniker": "C:\\Users\\alexg\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\Form\\biblioteca\\Clases\\Biblioteca.cs",
+              "RelativeDocumentMoniker": "Clases\\Biblioteca.cs",
+              "ToolTip": "C:\\Users\\alexg\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\Form\\biblioteca\\Clases\\Biblioteca.cs",
+              "RelativeToolTip": "Clases\\Biblioteca.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T02:15:49.521Z",
+              "WhenOpened": "2024-09-06T02:19:47.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Biblioteca",
+              "DocumentMoniker": "C:\\Users\\alexg\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\Form\\biblioteca\\Biblioteca.csproj",
+              "RelativeDocumentMoniker": "Biblioteca.csproj",
+              "ToolTip": "C:\\Users\\alexg\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\Form\\biblioteca\\Biblioteca.csproj",
+              "RelativeToolTip": "Biblioteca.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-06T02:18:51.177Z",
               "EditorCaption": ""
             }
           ]
