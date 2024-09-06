@@ -59,8 +59,8 @@ namespace Biblioteca
 
         private void CargarDatos()
         {
-            Biblioteca.CargarDatosEjemplo();
-            dgvLibros.DataSource = Biblioteca.Libros;
+            Clases.Biblioteca.CargarDatosEjemplo();
+            dgvLibros.DataSource = Clases.Biblioteca.Libros;
         }
 
         private void ConfigurarColumnasDataGridView()
@@ -88,7 +88,7 @@ namespace Biblioteca
         private void CargarLibros()
         {
             dgvLibros.DataSource = null; // Limpiar el DataGridView antes de recargarlo
-            dgvLibros.DataSource = Biblioteca.Libros.OrderByDescending(l => l.AnioPublicacion).ToList(); // Mostrar los libros más recientes al inicio
+            dgvLibros.DataSource = Clases.Biblioteca.Libros.OrderByDescending(l => l.AnioPublicacion).ToList(); // Mostrar los libros más recientes al inicio
 
             ConfigurarColumnasDataGridView();
         }
@@ -119,7 +119,7 @@ namespace Biblioteca
                 if (esFisico)
                 {
                     // Crear un libro físico
-                    var libroFisico = new LibroFisico
+                    var libroFisico = new Clases.LibroFisico
                     {
                         Titulo = titulo,
                         Autor = autor,
@@ -127,13 +127,13 @@ namespace Biblioteca
                         Ubicacion = txtUbicacion.Text
                     };
 
-                    Biblioteca.Libros.Add(libroFisico);
+                    Clases.Biblioteca.Libros.Add(libroFisico);
                 }
                 else
                 {
                     // Crear un libro digital
                     int tamanoArchivo = int.Parse(txtTamanoArchivo.Text);
-                    var libroDigital = new LibroElectronico
+                    var libroDigital = new Clases.LibroElectronico
                     {
                         Titulo = titulo,
                         Autor = autor,
@@ -142,7 +142,7 @@ namespace Biblioteca
                         Formato = txtFormato.Text
                     };
 
-                    Biblioteca.Libros.Add(libroDigital);
+                    Clases.Biblioteca.Libros.Add(libroDigital);
                 }
 
                 // Confirmar la adición
@@ -169,7 +169,7 @@ namespace Biblioteca
         private void btnBuscar_Click_1(object sender, EventArgs e)
         {
             string busqueda = txtBuscar.Text.ToLower();
-            dgvLibros.DataSource = Biblioteca.Libros.Where(libro => libro.Titulo.ToLower().Contains(busqueda) || libro.Autor.ToLower().Contains(busqueda))
+            dgvLibros.DataSource = Clases.Biblioteca.Libros.Where(libro => libro.Titulo.ToLower().Contains(busqueda) || libro.Autor.ToLower().Contains(busqueda))
                 .ToList();
         }
 
@@ -196,7 +196,7 @@ namespace Biblioteca
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             string busqueda = txtBuscar.Text.ToLower();
-            dgvLibros.DataSource = Biblioteca.Libros.Where(libro => libro.Titulo.ToLower().Contains(busqueda) || libro.Autor.ToLower().Contains(busqueda))
+            dgvLibros.DataSource = Clases.Biblioteca.Libros.Where(libro => libro.Titulo.ToLower().Contains(busqueda) || libro.Autor.ToLower().Contains(busqueda))
                 .ToList();
         }
     }
