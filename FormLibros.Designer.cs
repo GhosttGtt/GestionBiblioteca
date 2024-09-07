@@ -53,6 +53,8 @@
             pictureBox1 = new PictureBox();
             label4 = new Label();
             label5 = new Label();
+            btnEditarLibro = new Button();
+            btnEliminarlibro = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvLibros).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -94,7 +96,7 @@
             // 
             // txtUbicacion
             // 
-            txtUbicacion.Location = new Point(584, 246);
+            txtUbicacion.Location = new Point(584, 290);
             txtUbicacion.Name = "txtUbicacion";
             txtUbicacion.Size = new Size(191, 23);
             txtUbicacion.TabIndex = 4;
@@ -127,7 +129,7 @@
             dgvLibros.Name = "dgvLibros";
             dgvLibros.ReadOnly = true;
             dgvLibros.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvLibros.Size = new Size(440, 348);
+            dgvLibros.Size = new Size(440, 319);
             dgvLibros.TabIndex = 9;
             // 
             // Column1
@@ -160,7 +162,7 @@
             txtBuscar.BorderStyle = BorderStyle.FixedSingle;
             txtBuscar.Location = new Point(12, 55);
             txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(324, 23);
+            txtBuscar.Size = new Size(358, 23);
             txtBuscar.TabIndex = 10;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
@@ -169,9 +171,9 @@
             btnBuscar.BackColor = SystemColors.ActiveCaption;
             btnBuscar.FlatStyle = FlatStyle.Flat;
             btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBuscar.Location = new Point(332, 55);
+            btnBuscar.Location = new Point(376, 55);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(120, 23);
+            btnBuscar.Size = new Size(76, 23);
             btnBuscar.TabIndex = 11;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
@@ -222,7 +224,7 @@
             // 
             lblUbicacion.AutoSize = true;
             lblUbicacion.BackColor = SystemColors.ActiveCaption;
-            lblUbicacion.Location = new Point(478, 249);
+            lblUbicacion.Location = new Point(478, 290);
             lblUbicacion.Name = "lblUbicacion";
             lblUbicacion.Size = new Size(63, 15);
             lblUbicacion.TabIndex = 16;
@@ -293,11 +295,36 @@
             label5.Text = "----- LIBROS -----";
             label5.Click += label5_Click;
             // 
+            // btnEditarLibro
+            // 
+            btnEditarLibro.Location = new Point(12, 409);
+            btnEditarLibro.Name = "btnEditarLibro";
+            btnEditarLibro.Size = new Size(224, 23);
+            btnEditarLibro.TabIndex = 23;
+            btnEditarLibro.Text = "Editar libro";
+            btnEditarLibro.UseVisualStyleBackColor = true;
+            btnEditarLibro.Click += btnEditarLibro_Click;
+            // 
+            // btnEliminarlibro
+            // 
+            btnEliminarlibro.BackColor = Color.Red;
+            btnEliminarlibro.FlatStyle = FlatStyle.Flat;
+            btnEliminarlibro.ForeColor = Color.White;
+            btnEliminarlibro.Location = new Point(242, 409);
+            btnEliminarlibro.Name = "btnEliminarlibro";
+            btnEliminarlibro.Size = new Size(210, 23);
+            btnEliminarlibro.TabIndex = 24;
+            btnEliminarlibro.Text = "Eliminar libro";
+            btnEliminarlibro.UseVisualStyleBackColor = false;
+            btnEliminarlibro.Click += btnEliminarlibro_Click;
+            // 
             // FormLibros
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnEliminarlibro);
+            Controls.Add(btnEditarLibro);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(Volver);
@@ -356,5 +383,7 @@
         private PictureBox pictureBox1;
         private Label label4;
         private Label label5;
+        private Button btnEditarLibro;
+        private Button btnEliminarlibro;
     }
 }

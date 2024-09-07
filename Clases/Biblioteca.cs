@@ -19,14 +19,13 @@ namespace Biblioteca.Clases
             {
 
                 {
-
                     Libros.Add(new LibroFisico() { Titulo = "Cien Años de Soledad", Autor = "Gabriel García Márquez", AnioPublicacion = 1967, Ubicacion = "Estante A1", EstaPrestado = false });
                     Libros.Add(new LibroFisico() { Titulo = "El Señor de los Anillos", Autor = "J.R.R. Tolkien", AnioPublicacion = 1954, Ubicacion = "Estante A2", EstaPrestado = true });
                     Libros.Add(new LibroFisico() { Titulo = "Don Quijote de la Mancha", Autor = "Miguel de Cervantes", AnioPublicacion = 1605, Ubicacion = "Estante A3", EstaPrestado = false });
                     Libros.Add(new LibroFisico() { Titulo = "Orgullo y Prejuicio", Autor = "Jane Austen", AnioPublicacion = 1813, Ubicacion = "Estante B1", EstaPrestado = true });
                     Libros.Add(new LibroFisico() { Titulo = "1984", Autor = "George Orwell", AnioPublicacion = 1949, Ubicacion = "Estante B2", EstaPrestado = false });
                     Libros.Add(new LibroFisico() { Titulo = "Matar a un Ruiseñor", Autor = "Harper Lee", AnioPublicacion = 1960, Ubicacion = "Estante B3", EstaPrestado = false });
-                    Libros.Add(new LibroFisico() { Titulo = "Crimen y Castigo", Autor = "Fiódor Dostoyevski", AnioPublicacion = 1866, Ubicacion = "Estante C1", EstaPrestado = true });
+                    Libros.Add(new LibroFisico() { Titulo = "Crimen y Castigo", Autor = "Fiódor Dostoyevski", AnioPublicacion = 1866, Ubicacion = "Estante C1", EstaPrestado = false });
                     Libros.Add(new LibroFisico() { Titulo = "El Gran Gatsby", Autor = "F. Scott Fitzgerald", AnioPublicacion = 1925, Ubicacion = "Estante C2", EstaPrestado = false });
                     Libros.Add(new LibroFisico() { Titulo = "La Odisea", Autor = "Homero", AnioPublicacion = -800, Ubicacion = "Estante C3", EstaPrestado = true });
                     Libros.Add(new LibroFisico() { Titulo = "El Retrato de Dorian Gray", Autor = "Oscar Wilde", AnioPublicacion = 1890, Ubicacion = "Estante D1", EstaPrestado = false });

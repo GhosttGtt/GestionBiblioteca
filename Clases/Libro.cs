@@ -19,15 +19,13 @@ namespace Biblioteca.Clases
     public class LibroFisico : Libro
     {
         public string Ubicacion { get; set; }
-
         public override string Tipo => "Físico";
     }
 
     public class LibroElectronico : Libro
     {
         public string Formato { get; set; }
-        public int TamanoArchivo { get; set; } // Tamaño en kilobytes
-
+        public int TamanoArchivo { get; set; } 
         public override string Tipo => "Digital";
     }
 }

@@ -13,5 +13,6 @@ namespace Biblioteca.Clases
         public string FechaPrestamo { get; set; }
         public string FechaDevolucion { get; set; }
         public string Estado { get; set; }
+
     }
 }

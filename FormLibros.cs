@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Biblioteca.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,15 +22,17 @@ namespace Biblioteca
         }
         private void InicializarComponentes()
         {
-            // Configurar los elementos del ComboBox
-            cmbTipoLibro.Items.Clear();  // Asegurarse de limpiar elementos previos
+            
+            cmbTipoLibro.Items.Clear(); 
             cmbTipoLibro.Items.Add("Físico");
             cmbTipoLibro.Items.Add("Digital");
 
-            // Solo asigna el SelectedIndex si hay ítems en el ComboBox
             if (cmbTipoLibro.Items.Count > 0)
             {
-                cmbTipoLibro.SelectedIndex = 0; // Selecciona "Físico" por defecto
+                cmbTipoLibro.SelectedIndex = 0;
+            }
+            else {
+                cmbTipoLibro.SelectedIndex = 0;
             }
 
             MostrarCamposSegunTipo();
@@ -103,22 +106,16 @@ namespace Biblioteca
         {
             try
             {
-                // Obtener los datos del formulario
+                
                 string titulo = txtTitulo.Text;
                 string autor = txtAutor.Text;
                 int anioPublicacion = int.Parse(txtAnioPublicacion.Text);
                 bool esFisico = cmbTipoLibro.SelectedIndex == 0;
-
-                // Validar la entrada
-                if (string.IsNullOrWhiteSpace(titulo) || string.IsNullOrWhiteSpace(autor) || string.IsNullOrWhiteSpace(txtAnioPublicacion.Text))
-                {
-                    MessageBox.Show("Por favor, complete todos los campos obligatorios.");
-                    return;
-                }
+                               
 
                 if (esFisico)
                 {
-                    // Crear un libro físico
+                    
                     var libroFisico = new Clases.LibroFisico
                     {
                         Titulo = titulo,
@@ -126,14 +123,24 @@ namespace Biblioteca
                         AnioPublicacion = anioPublicacion,
                         Ubicacion = txtUbicacion.Text
                     };
+                    if (string.IsNullOrWhiteSpace(titulo) || string.IsNullOrWhiteSpace(autor) || string.IsNullOrWhiteSpace(txtAnioPublicacion.Text) || string.IsNullOrWhiteSpace(txtUbicacion.Text))
+                    {
+                        MessageBox.Show("Por favor, complete todos los campos obligatorios.");
+                        return;
+                    }
+                    else {
+                        Clases.Biblioteca.Libros.Add(libroFisico);
+                        LimpiarFormulario();
+                    }
 
-                    Clases.Biblioteca.Libros.Add(libroFisico);
+                    
                 }
                 else
                 {
-                    // Crear un libro digital
+                    
                     int tamanoArchivo = int.Parse(txtTamanoArchivo.Text);
                     var libroDigital = new Clases.LibroElectronico
+                    
                     {
                         Titulo = titulo,
                         Autor = autor,
@@ -141,19 +148,27 @@ namespace Biblioteca
                         TamanoArchivo = tamanoArchivo,
                         Formato = txtFormato.Text
                     };
-
-                    Clases.Biblioteca.Libros.Add(libroDigital);
+                    if (string.IsNullOrWhiteSpace(titulo) || string.IsNullOrWhiteSpace(autor) || string.IsNullOrWhiteSpace(txtAnioPublicacion.Text) || string.IsNullOrWhiteSpace(txtTamanoArchivo.Text)|| string.IsNullOrWhiteSpace(txtFormato.Text))
+                    {
+                        MessageBox.Show("Por favor, complete todos los campos obligatorios.");
+                        return;
+                    }
+                    else
+                    {
+                        Clases.Biblioteca.Libros.Add(libroDigital);
+                        LimpiarFormulario();
+                    }
                 }
 
-                // Confirmar la adición
+                
                 MessageBox.Show("Libro agregado exitosamente.");
                 CargarLibros();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show($"Error al agregar el libro: {ex.Message}");
+                MessageBox.Show($"Error al agregar el libro: Complete todos los campos");
             }
-            LimpiarFormulario();
+            
         }
 
         private void LimpiarFormulario()
@@ -198,6 +213,52 @@ namespace Biblioteca
             string busqueda = txtBuscar.Text.ToLower();
             dgvLibros.DataSource = Clases.Biblioteca.Libros.Where(libro => libro.Titulo.ToLower().Contains(busqueda) || libro.Autor.ToLower().Contains(busqueda))
                 .ToList();
+        }
+
+        private void btnEliminarlibro_Click(object sender, EventArgs e)
+        {
+            if (dgvLibros.SelectedRows.Count > 0)
+            {
+                DialogResult result;
+                result = MessageBox.Show("¿Deseas eliminar permanentemente este registro?", "", MessageBoxButtons.YesNo);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Clases.Libro LibroSeleccionado = (Libro)dgvLibros.SelectedRows[0].DataBoundItem;
+                    Clases.Biblioteca.Libros.Remove(LibroSeleccionado);
+
+                    ActualizarLibros();
+                }
+            }
+            else {
+                MessageBox.Show("Seleccione un libro para eliminar.");
+            }
+        }
+        private void ActualizarLibros()
+        {
+            dgvLibros.DataSource = null;
+            dgvLibros.DataSource = Clases.Biblioteca.Libros;
+        }
+
+        private void btnEditarLibro_Click(object sender, EventArgs e)
+        {
+            if (dgvLibros.SelectedRows.Count > 0)
+            {
+                
+                Libro libroSeleccionado = (Libro)dgvLibros.SelectedRows[0].DataBoundItem;
+
+              
+                FormEditarLibro formEditarLibro = new FormEditarLibro(libroSeleccionado);
+                var resultado = formEditarLibro.ShowDialog(); 
+
+                if (resultado == DialogResult.OK)
+                {
+                    ActualizarLibros();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un libro para editar.");
+            }
         }
     }
 }

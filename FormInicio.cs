@@ -5,22 +5,15 @@ namespace Biblioteca
         public FormInicio()
         {
             InitializeComponent();
-            Biblioteca.CargarDatosEjemplo();
+            Clases.Biblioteca.CargarDatosEjemplo();
         }
 
         private void btnGestionLibros_Click(object sender, EventArgs e)
         {
-
-
-            this.Hide();
-
-            // Crear y mostrar el formulario secundario
+             this.Hide();
             using (var formSecundario = new FormLibros())
             {
-                // Mostrar el formulario secundario
                 formSecundario.ShowDialog();
-
-                // Al cerrar el formulario secundario, volvemos a mostrar el formulario principal
                 this.Show();
             }
 

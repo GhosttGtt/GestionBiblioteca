@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -60,7 +61,6 @@ namespace Biblioteca
 
         private void btnRealizarPrestamo_Click(object sender, EventArgs e)
         {
-
             try
             {
 
@@ -96,7 +96,7 @@ namespace Biblioteca
             dgvHistorialPrestamos.Columns.Clear();
             dgvHistorialPrestamos.AutoGenerateColumns = false;
 
-            // Crear columnas
+           
             DataGridViewTextBoxColumn columnaTitulo = new DataGridViewTextBoxColumn();
             columnaTitulo.HeaderText = "Título del Libro";
             columnaTitulo.DataPropertyName = "TituloLibro";
@@ -127,10 +127,48 @@ namespace Biblioteca
         {
 
         }
+        private void btnDevolver_Click(object sender, EventArgs e)
+        {
+           
+
+        }
+        private void ActualizarPrestamos()
+        {
+            dgvHistorialPrestamos.DataSource = null;
+            dgvHistorialPrestamos.DataSource = Clases.Biblioteca.Prestamos; // Reemplaza con la lista de préstamos
+        }
+
 
         private void Volver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnDevolver_Click_1(object sender, EventArgs e)
+        {
+            if (dgvHistorialPrestamos.SelectedRows.Count > 0)
+            {
+                
+                HistorialPrestamoDTO historialSeleccionado = (HistorialPrestamoDTO)dgvHistorialPrestamos.SelectedRows[0].DataBoundItem;
+
+              
+                if (historialSeleccionado.FechaDevolucion != "Pendiente")
+                {
+                    MessageBox.Show("Este libro ya ha sido devuelto.");
+                    return;
+                }
+
+                
+                historialSeleccionado.FechaDevolucion = DateTime.Now.ToString();
+                historialSeleccionado.Estado = "Devuelto";
+
+                ActualizarPrestamos();
+                MessageBox.Show("El libro ha sido devuelto exitosamente.");
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un préstamo para devolver.");
+            }
         }
     }
 }

@@ -38,11 +38,18 @@ namespace Biblioteca
                 Nombre = txtNombre.Text,
                 NumeroMiembro = nuevoNumeroMiembro,
             };
-            Clases.Biblioteca.Miembros.Add(nuevoMiembro);
-            dgvMiembros.DataSource = null;
-            dgvMiembros.DataSource = Clases.Biblioteca.Miembros;
-            MessageBox.Show("Miembro agregado.");
-            LimpiarFormulario();
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                MessageBox.Show("Ingrese un nombre.");
+            }
+            else {
+                Clases.Biblioteca.Miembros.Add(nuevoMiembro);
+                dgvMiembros.DataSource = null;
+                dgvMiembros.DataSource = Clases.Biblioteca.Miembros;
+                MessageBox.Show("Miembro agregado.");
+                LimpiarFormulario();
+            }
+            
         }
 
         private void LimpiarFormulario()
@@ -68,7 +75,6 @@ namespace Biblioteca
         }
         private void dvgMiembros_SelectionChanged(object sender, EventArgs e)
         {
-
 
         }
         private void FormMiembros_Load(object sender, EventArgs e)
@@ -121,6 +127,9 @@ namespace Biblioteca
                 MessageBox.Show("Nombre actualizado.");
 
             }
+            else {
+                MessageBox.Show("Selecciona un nombre para actualizar.");
+            }
         }
 
         private void btnEliminarMiembro_Click(object sender, EventArgs e)
@@ -131,6 +140,9 @@ namespace Biblioteca
                 Clases.Biblioteca.Miembros.Remove(miembroSeleccionado);
 
                 ActualizarMiembros();
+            }
+            else {
+                MessageBox.Show("Selecciona el nombre que quieres eliminar.");
             }
         }
         private void ActualizarMiembros()
@@ -154,6 +166,10 @@ namespace Biblioteca
                
                 }
                 
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un nombre para actualizar.");
             }
         }
     }

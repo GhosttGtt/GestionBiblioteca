@@ -40,23 +40,29 @@
             dtpFechaPrestamo = new DateTimePicker();
             Volver = new Button();
             label5 = new Label();
+            lblTitulo = new Label();
+            label1 = new Label();
+            btnDevolver = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvHistorialPrestamos).BeginInit();
             SuspendLayout();
             // 
             // btnRealizarPrestamo
             // 
-            btnRealizarPrestamo.Location = new Point(513, 234);
+            btnRealizarPrestamo.BackColor = Color.Olive;
+            btnRealizarPrestamo.FlatStyle = FlatStyle.Flat;
+            btnRealizarPrestamo.ForeColor = SystemColors.ControlLightLight;
+            btnRealizarPrestamo.Location = new Point(513, 176);
             btnRealizarPrestamo.Name = "btnRealizarPrestamo";
             btnRealizarPrestamo.Size = new Size(251, 23);
             btnRealizarPrestamo.TabIndex = 0;
             btnRealizarPrestamo.Text = "Prestamo";
-            btnRealizarPrestamo.UseVisualStyleBackColor = true;
+            btnRealizarPrestamo.UseVisualStyleBackColor = false;
             btnRealizarPrestamo.Click += btnRealizarPrestamo_Click;
             // 
             // cmbLibros
             // 
             cmbLibros.FormattingEnabled = true;
-            cmbLibros.Location = new Point(513, 112);
+            cmbLibros.Location = new Point(513, 89);
             cmbLibros.Name = "cmbLibros";
             cmbLibros.Size = new Size(251, 23);
             cmbLibros.TabIndex = 1;
@@ -64,7 +70,7 @@
             // cmbMiembros
             // 
             cmbMiembros.FormattingEnabled = true;
-            cmbMiembros.Location = new Point(513, 157);
+            cmbMiembros.Location = new Point(513, 118);
             cmbMiembros.Name = "cmbMiembros";
             cmbMiembros.Size = new Size(251, 23);
             cmbMiembros.TabIndex = 2;
@@ -118,7 +124,7 @@
             // 
             // dtpFechaPrestamo
             // 
-            dtpFechaPrestamo.Location = new Point(513, 205);
+            dtpFechaPrestamo.Location = new Point(513, 147);
             dtpFechaPrestamo.Name = "dtpFechaPrestamo";
             dtpFechaPrestamo.Size = new Size(251, 23);
             dtpFechaPrestamo.TabIndex = 4;
@@ -147,11 +153,47 @@
             label5.TabIndex = 28;
             label5.Text = "----- PRESTAMOS -----";
             // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo.Location = new Point(513, 61);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(160, 25);
+            lblTitulo.TabIndex = 29;
+            lblTitulo.Text = "Nuevo prestamo";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(513, 239);
+            label1.Name = "label1";
+            label1.Size = new Size(113, 25);
+            label1.TabIndex = 29;
+            label1.Text = "Devolución";
+            label1.Visible = false;
+            // 
+            // btnDevolver
+            // 
+            btnDevolver.FlatStyle = FlatStyle.Flat;
+            btnDevolver.Location = new Point(513, 278);
+            btnDevolver.Name = "btnDevolver";
+            btnDevolver.Size = new Size(251, 23);
+            btnDevolver.TabIndex = 30;
+            btnDevolver.Text = "Devolver libro";
+            btnDevolver.UseVisualStyleBackColor = true;
+            btnDevolver.Visible = false;
+            btnDevolver.Click += btnDevolver_Click_1;
+            // 
             // FormPrestamos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnDevolver);
+            Controls.Add(label1);
+            Controls.Add(lblTitulo);
             Controls.Add(label5);
             Controls.Add(Volver);
             Controls.Add(dtpFechaPrestamo);
@@ -182,5 +224,8 @@
         private DateTimePicker dtpFechaPrestamo;
         private Button Volver;
         private Label label5;
+        private Label lblTitulo;
+        private Label label1;
+        private Button btnDevolver;
     }
 }
