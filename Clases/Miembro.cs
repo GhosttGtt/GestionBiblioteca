@@ -11,5 +11,6 @@ namespace Biblioteca.Clases
         public string Nombre { get; set; }
         public int NumeroMiembro { get; set; }
         public List<Prestamo> HistorialPrestamos { get; set; } = new List<Prestamo>();
+
     }
 }

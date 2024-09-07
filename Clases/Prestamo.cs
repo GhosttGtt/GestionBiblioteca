@@ -19,6 +19,7 @@ namespace Biblioteca.Clases
             Libro = libro;
             Miembro = miembro;
             FechaPrestamo = fechaPrestamo;
+
         }
     }
 }

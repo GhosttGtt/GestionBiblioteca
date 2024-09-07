@@ -19,7 +19,6 @@ namespace Biblioteca.Clases
             {
 
                 {
-
                     Libros.Add(new LibroFisico() { Titulo = "Cien Años de Soledad", Autor = "Gabriel García Márquez", AnioPublicacion = 1967, Ubicacion = "Estante A1", EstaPrestado = false });
                     Libros.Add(new LibroFisico() { Titulo = "El Señor de los Anillos", Autor = "J.R.R. Tolkien", AnioPublicacion = 1954, Ubicacion = "Estante A2", EstaPrestado = true });
                     Libros.Add(new LibroFisico() { Titulo = "Don Quijote de la Mancha", Autor = "Miguel de Cervantes", AnioPublicacion = 1605, Ubicacion = "Estante A3", EstaPrestado = false });
